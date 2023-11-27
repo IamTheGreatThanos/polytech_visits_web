@@ -20,7 +20,6 @@ class NetworkService {
         "Access-Control-Allow-Origin": "*",
         "Accept": "application/json",
         "Content-Type": "application/json; charset=UTF-8",
-        "Access-Control-Allow-Origin": "*",
       },
       body: jsonEncode({'username': login, 'password': password}),
     );
