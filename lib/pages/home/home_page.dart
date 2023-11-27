@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:polytech_visits_web/services/network_service.dart';
@@ -15,11 +17,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  Timer? timer;
   List<SignInHistory> signInHistory = [];
 
   @override
   void initState() {
     super.initState();
+    getHistory();
+    timer =
+        Timer.periodic(const Duration(seconds: 5), (Timer t) => getHistory());
+  }
+
+  @override
+  void dispose() {
+    timer?.cancel();
+    super.dispose();
   }
 
   @override
