@@ -22,7 +22,6 @@ class NetworkService {
         "Content-Type": "application/json; charset=UTF-8",
       },
       body: jsonEncode({'username': login, 'password': password}),
-      encoding: Encoding.getByName("utf-8"),
     );
 
     var responseJson = jsonDecode(response.body);

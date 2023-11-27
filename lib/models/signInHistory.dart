@@ -1,4 +1,3 @@
-import 'package:intl/intl.dart';
 import 'package:polytech_visits_web/models/auditory.dart';
 import 'package:polytech_visits_web/models/user.dart';
 
@@ -19,8 +18,7 @@ class SignInHistory {
     return SignInHistory(
       user: User.fromJson(json['user']),
       auditory: Auditory.fromJson(json['auditory']),
-      lastPick: DateFormat('yyyy-MM-dd HH:mm:ss')
-          .format(DateTime.parse(json['last_pick'])),
+      lastPick: json['last_pick'] ?? '',
       status: json['status'] ?? '',
     );
   }
