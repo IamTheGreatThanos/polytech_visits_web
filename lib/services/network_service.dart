@@ -17,7 +17,7 @@ class NetworkService {
     final response = await http.post(
       Uri.parse('${baseUrl}users/login/'),
       headers: {
-        "Access-Control-Allow-Origin": "*",
+        // "Access-Control-Allow-Origin": "*",
         "Accept": "application/json",
         "Content-Type": "application/json; charset=UTF-8",
       },
@@ -37,7 +37,7 @@ class NetworkService {
     final response = await http.post(
       Uri.parse('${baseUrl}schedule/check/'),
       headers: {
-        "Access-Control-Allow-Origin": "*",
+        // "Access-Control-Allow-Origin": "*",
         "Accept": "application/json",
         "Content-Type": "application/json; charset=UTF-8",
         "Authorization": "Token ${await AuthRepository().getUserToken()}"
@@ -59,7 +59,7 @@ class NetworkService {
     final response = await http.get(
       Uri.parse('${baseUrl}users/history/'),
       headers: {
-        "Access-Control-Allow-Origin": "*",
+        // "Access-Control-Allow-Origin": "*",
         "Accept": "application/json",
         "Content-Type": "application/json; charset=UTF-8",
         "Authorization": "Token ${await AuthRepository().getUserToken()}"
