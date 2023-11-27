@@ -57,7 +57,7 @@ class NetworkService {
 
   Future<dynamic> getEntryHistory() async {
     final response = await http.get(
-      Uri.parse('${baseUrl}user/history/'),
+      Uri.parse('${baseUrl}users/history/'),
       headers: {
         "Access-Control-Allow-Origin": "*",
         "Accept": "application/json",
