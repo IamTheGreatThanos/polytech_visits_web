@@ -24,7 +24,7 @@ class _AuthPageState extends State<AuthPage> {
 
   @override
   void initState() {
-    loginController.text = 'thanos';
+    loginController.text = 'Шамсия';
     passwordController.text = '123456ak';
     super.initState();
   }

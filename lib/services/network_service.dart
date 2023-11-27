@@ -22,6 +22,7 @@ class NetworkService {
         "Content-Type": "application/json; charset=UTF-8",
       },
       body: jsonEncode({'username': login, 'password': password}),
+      encoding: Encoding.getByName("utf-8"),
     );
 
     var responseJson = jsonDecode(response.body);
@@ -29,7 +30,7 @@ class NetworkService {
     if (response.statusCode == 200) {
       return responseJson;
     } else {
-      throw Exception(responseJson['message']);
+      throw Exception(responseJson);
     }
   }
 
@@ -46,12 +47,11 @@ class NetworkService {
     );
 
     var responseJson = jsonDecode(response.body);
-    print(responseJson);
 
     if (response.statusCode == 200) {
       return responseJson;
     } else {
-      throw Exception(responseJson['message']);
+      throw Exception(responseJson);
     }
   }
 
@@ -66,12 +66,13 @@ class NetworkService {
       },
     );
 
-    var responseJson = jsonDecode(response.body);
+    var responseJson = jsonDecode(utf8.decode(response.bodyBytes));
+    // print(responseJson);
 
     if (response.statusCode == 200) {
       return responseJson;
     } else {
-      throw Exception(responseJson['message']);
+      throw Exception(responseJson);
     }
   }
 }

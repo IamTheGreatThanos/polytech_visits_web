@@ -109,7 +109,7 @@ class _HomePageState extends State<HomePage> {
 
   List<DataColumn> _createColumns() {
     return [
-      const DataColumn(label: Text('ID')),
+      const DataColumn(label: Text('ФИО')),
       const DataColumn(label: Text('Кабинет')),
       const DataColumn(label: Text('Время')),
       const DataColumn(label: Text('Статус')),

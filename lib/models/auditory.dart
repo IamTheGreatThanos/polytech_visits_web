@@ -9,7 +9,7 @@ class Auditory {
 
   factory Auditory.fromJson(Map<String, dynamic> json) {
     return Auditory(
-      id: json['uid'],
+      id: json['id'],
       number: json['number'],
     );
   }
